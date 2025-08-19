@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Motoboy Rio Preto & Cedral | WhatsApp | 8h–13h</title>
+  <meta name="description" content="Motoboy em São José do Rio Preto e Cedral • Atendimento 8h às 13h • Preço por tamanho e peso • Contato rápido por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#22d3ee; --accent:#fbbf24; --ink:#0b1220; }
+    html,body{scroll-behavior:smooth}
+    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans','Apple Color Emoji','Segoe UI Emoji',sans-serif}
+    .bg-radial{
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(34,211,238,.25), transparent 60%),
+        radial-gradient(1000px 500px at -10% 10%, rgba(168,85,247,.25), transparent 60%),
+        linear-gradient(135deg, #0f172a 0%, #0b1220 45%, #0a0f1c 100%);
+    }
+    .glass{backdrop-filter:blur(10px);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08)}
+    .card{background: linear-gradient(#0f172a,#0b1220) padding-box, linear-gradient(120deg, rgba(34,211,238,.5), rgba(168,85,247,.45)) border-box; border:1px solid transparent;}
+    .btn-glow{box-shadow:0 8px 30px rgba(251,191,36,.25)}
+    .btn-glow:hover{box-shadow:0 10px 36px rgba(251,191,36,.35)}
+    .pulse{box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:pulse 2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 22px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+    .focus-ring:focus{outline:3px solid var(--brand);outline-offset:3px}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .7rem;border-radius:999px;font-size:.75rem}
+  </style>
+</head>
+<body class="bg-radial text-white">
+  <!-- Topo -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-black/30 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-cyan-400/15 ring-1 ring-cyan-300/30">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-cyan-300">
+            <path d="M4 13a8 8 0 1 1 16 0v2a2 2 0 0 1-2 2h-6a3 3 0 0 1-3-3v-1H4Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 7a6 6 0 0 1 6 6h-5a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+        </span>
+        <div>
+          <p class="font-extrabold tracking-tight text-white">Rio Preto Moto Rápido</p>
+          <p class="text-xs text-white/70 -mt-1">São José do Rio Preto • Cedral</p>
+        </div>
+      </a>
+      <a data-msg="Olá! Quero fazer uma entrega." href="#" class="hidden sm:inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-ink font-semibold px-4 py-2 rounded-xl btn-glow focus-ring transition">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0 11.95 11.95 0 0 0 0 12c0 2.11.55 4.12 1.6 5.91L0 24l6.25-1.63A11.94 11.94 0 0 0 12.06 24 11.95 11.95 0 0 0 24 12c0-3.2-1.25-6.2-3.48-8.52Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden pt-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="relative z-10">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wide uppercase text-cyan-300 bg-cyan-400/10 ring-1 ring-cyan-300/30 px-3 py-1 rounded-full">
+            Atendo Rio Preto e Cedral
+          </span>
+          <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Contato rápido por WhatsApp</h1>
+          <p class="mt-4 text-white/80 text-lg max-w-xl">Horário de atendimento: 8h às 13h. Preço varia conforme tamanho e peso do pacote. Chame no WhatsApp e combinamos na hora.</p>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <span id="badge-horario" class="badge bg-emerald-500/15 ring-1 ring-emerald-400/30 text-emerald-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Online 8h–13h
+            </span>
+            <span class="badge bg-amber-400/15 ring-1 ring-amber-300/30 text-amber-300">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Resposta rápida
+            </span>
+          </div>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a data-msg="Olá! Preciso de uma entrega entre 8h e 13h." href="#" class="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-ink font-semibold px-6 py-3 rounded-xl btn-glow focus-ring transition">
+              Chamar no WhatsApp
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="#0b1220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#orcamento" class="inline-flex items-center justify-center gap-2 glass text-white font-semibold px-6 py-3 rounded-xl focus-ring transition">
+              Ver preço estimado
+            </a>
+          </div>
+        </div>
+
+        <div class="relative z-10">
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-semibold text-lg">Mensagens rápidas</h3>
+            <div class="mt-4 grid sm:grid-cols-2 gap-3">
+              <a data-msg="Olá! Retirada em São José do Rio Preto e entrega em Cedral. Atende hoje das 8h às 13h?" href="#" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-ink font-semibold">RP → Cedral</a>
+              <a data-msg="Olá! Retirada em Cedral e entrega em São José do Rio Preto. Atende hoje das 8h às 13h?" href="#" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-ink font-semibold">Cedral → RP</a>
+              <a data-msg="Olá! Entrega dentro de São José do Rio Preto entre 8h e 13h." href="#" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-ink font-semibold">Dentro de RP</a>
+              <a data-msg="Olá! Entrega dentro de Cedral entre 8h e 13h." href="#" class="inline-flex justify-center items-center px-4 py-3 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-ink font-semibold">Dentro de Cedral</a>
+            </div>
+            <p class="text-xs text-white/60 mt-3">Todos os botões abrem o WhatsApp com a mensagem pronta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estimativa por tamanho e peso -->
+  <section id="orcamento" class="relative py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div class="card rounded-2xl p-6 sm:p-8">
+          <h2 class="text-2xl sm:text-3xl font-extrabold">Preço estimado</h2>
+          <p class="text-white/70 mt-1">Escolha o tamanho e o peso do pacote. O valor é estimado e confirmado pelo WhatsApp.</p>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-2 text-white/80">Tamanho do pacote</label>
+              <select id="tamanho" class="w-full glass rounded-xl px-4 py-3 focus-ring">
+                <option value="pequeno">Pequeno (docs/pequenas caixas)</option>
+                <option value="medio">Médio (até 35×30×30 cm)</option>
+                <option value="grande">Grande (até 45×40×40 cm)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm mb-2 text-white/80">Faixa de peso</label>
+              <select id="peso" class="w-full glass rounded-xl px-4 py-3 focus-ring">
+                <option value="0-1">0–1 kg</option>
+                <option value="1-3">1–3 kg</option>
+                <option value="3-6">3–6 kg</option>
+                <option value="6-10">6–10 kg</option>
+              </select>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-sm mb-2 text-white/80">Observações (opcional)</label>
+              <input id="obs" class="w-full glass rounded-xl px-4 py-3 focus-ring text-white placeholder-white/40" placeholder="Ex.: portaria, frágil, precisa de troco, etc." />
+            </div>
+          </div>
+
+          <button id="btnCalcular" class="mt-5 w-full bg-amber-400 hover:bg-amber-300 text-ink font-semibold px-5 py-3 rounded-xl btn-glow focus-ring transition">Calcular valor</button>
+
+          <div id="resultado" class="hidden mt-5 rounded-xl p-5 glass">
+            <p class="text-sm text-white/70">Estimativa</p>
+            <p id="preco" class="text-2xl font-extrabold mt-1">R$ 0,00</p>
+            <p id="detalhes" class="text-white/80 mt-2"></p>
+            <div class="mt-4 flex flex-col sm:flex-row gap-3">
+              <a id="btnWhatsOrc" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-ink font-semibold px-5 py-3 rounded-xl focus-ring transition">
+                Enviar pelo WhatsApp
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0 11.95 11.95 0 0 0 0 12c0 2.11.55 4.12 1.6 5.91L0 24l6.25-1.63A11.94 11.94 0 0 0 12.06 24 11.95 11.95 0 0 0 24 12c0-3.2-1.25-6.2-3.48-8.52Z"/></svg>
+              </a>
+              <a data-msg="Olá! Quero confirmar um valor de entrega." href="#" class="sm:w-44 inline-flex items-center justify-center glass text-white font-semibold px-5 py-3 rounded-xl focus-ring transition">
+                Chamar direto
+              </a>
+            </div>
+            <p class="text-xs text-white/50 mt-3">Valores estimados para referência. Confirmamos o total no WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-semibold text-lg">Como funciona o valor</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">•</span> Base de serviço + adicional por tamanho</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">•</span> Acréscimo por faixa de peso</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">•</span> Atendo das 8h às 13h (mensagens fora do horário serão respondidas no dia útil seguinte)</li>
+            </ul>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold text-lg">Cidades atendidas</h3>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full bg-cyan-400/15 ring-1 ring-cyan-300/30 text-cyan-200">São José do Rio Preto</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-fuchsia-400/15 ring-1 ring-fuchsia-300/30 text-fuchsia-200">Cedral</span>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6">
+            <h3 class="font-semibold text-lg">Contato direto</h3>
+            <div class="mt-3 flex flex-wrap gap-3">
+              <a data-msg="Olá! Preciso de uma entrega entre 8h e 13h." href="#" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-ink font-semibold px-4 py-2 rounded-xl focus-ring transition">WhatsApp agora</a>
+              <a href="tel:+5517996344371" class="inline-flex items-center gap-2 glass px-4 py-2 rounded-xl focus-ring transition">Ligar</a>
+            </div>
+            <p class="text-xs text-white/60 mt-3">Tudo é feito via WhatsApp. Não salvamos dados aqui.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="mt-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/60 text-sm">© <span id="year"></span> Rio Preto Moto Rápido • Atendimento 8h–13h</p>
+      <div class="flex items-center gap-3 text-sm">
+        <a data-msg="Olá! Quero falar com o motoboy." href="#" class="text-white/70 hover:text-white">Falar no WhatsApp</a>
+        <span class="text-white/30">•</span>
+        <a href="#top" class="text-white/70 hover:text-white">Voltar ao topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a data-msg="Olá! Pode me atender entre 8h e 13h?" href="#" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-ink flex items-center justify-center pulse focus-ring" aria-label="Fale no WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0 11.95 11.95 0 0 0 0 12c0 2.11.55 4.12 1.6 5.91L0 24l6.25-1.63A11.94 11.94 0 0 0 12.06 24 11.95 11.95 0 0 0 24 12c0-3.2-1.25-6.2-3.48-8.52Z"/></svg>
+  </a>
+
+  <script>
+    // Configurações
+    const numeroWhats = '5517996344371'; // +55 17 99634-4371
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mostra se está dentro do horário 8h–13h
+    (function(){
+      const now = new Date();
+      const hora = now.getHours();
+      const dentro = hora >= 8 && hora < 13;
+      const badge = document.getElementById('badge-horario');
+      if(!dentro){
+        badge.textContent = 'Fora do horário (resposta no próximo atendimento)';
+        badge.className = 'badge bg-white/10 ring-1 ring-white/20 text-white/80';
+      }
+    })();
+
+    // Link do WhatsApp
+    function linkWhats(texto){
+      const msg = encodeURIComponent(texto || 'Olá!');
+      return `https://wa.me/${numeroWhats}?text=${msg}`;
+    }
+
+    // Ações dos botões com mensagens prontas
+    document.querySelectorAll('[data-msg]').forEach(el=>{
+      el.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const msg = el.getAttribute('data-msg') || 'Olá!';
+        window.open(linkWhats(msg), '_blank');
+      });
+    });
+
+    // Estimativa simples baseada em tamanho e peso
+    function calcularPreco(){
+      const tamanho = document.getElementById('tamanho').value;
+      const peso = document.getElementById('peso').value;
+      const obs = (document.getElementById('obs').value || '').trim();
+
+      // Base de serviço
+      let base = 15;
+
+      // Adicional por tamanho
+      let addTam = 0;
+      if (tamanho === 'medio') addTam = 6;
+      if (tamanho === 'grande') addTam = 12;
+
+      // Adicional por peso (faixa)
+      let addPeso = 0;
+      if (peso === '1-3') addPeso = 4;
+      if (peso === '3-6') addPeso = 8;
+      if (peso === '6-10') addPeso = 12;
+
+      let total = base + addTam + addPeso;
+
+      // Mínimo para referência
+      if (total < 20) total = 20;
+
+      // Exibição
+      const resultado = document.getElementById('resultado');
+      const precoEl = document.getElementById('preco');
+      const detEl = document.getElementById('detalhes');
+      precoEl.textContent = total.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+      const pesoLabel = {'0-1':'0–1 kg','1-3':'1–3 kg','3-6':'3–6 kg','6-10':'6–10 kg'}[peso] || peso;
+      const tamLabel = {'pequeno':'Pequeno','medio':'Médio','grande':'Grande'}[tamanho] || tamanho;
+      detEl.textContent = `Tamanho: ${tamLabel} • Peso: ${pesoLabel}` + (obs ? ` • Obs.: ${obs}` : '');
+
+      resultado.classList.remove('hidden');
+
+      // Monta mensagem para WhatsApp
+      const msg = `Olá! Quero confirmar uma entrega:%0A%0A` +
+                  `• Tamanho: ${tamLabel}%0A` +
+                  `• Peso: ${pesoLabel}` +
+                  (obs ? `%0A• Obs.: ${encodeURIComponent(obs)}` : '') +
+                  `%0A%0AValor estimado: ${encodeURIComponent(precoEl.textContent)}%0A` +
+                  `Atendimento das 8h às 13h. Pode me atender?`;
+      document.getElementById('btnWhatsOrc').setAttribute('href', linkWhats(decodeURIComponent(msg)));
+    }
+
+    document.getElementById('btnCalcular').addEventListener('click', calcularPreco);
+
+    // Enviar com Ctrl/Cmd+Enter no campo de obs
+    document.getElementById('obs').addEventListener('keydown', (e)=>{
+      if(e.key==='Enter' && (e.ctrlKey||e.metaKey)){ calcularPreco(); }
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971cc81a47eb8b17',t:'MTc1NTYzOTMzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

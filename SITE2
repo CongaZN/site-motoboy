@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoExpress - Entregas Rápidas e Seguras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .btn-green {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-green:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-blue:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #10b981;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        .working-hours-alert {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            animation: pulse 2s infinite;
+        }
+        
+        .motorcycle-icon {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-10px); }
+            70% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-green-400 animate-pulse-slow">
+                    🏍️ MotoExpress
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="nav-item text-white hover:text-green-400 cursor-pointer">Início</a>
+                    <a href="#about" class="nav-item text-white hover:text-green-400 cursor-pointer">Sobre</a>
+                    <a href="#services" class="nav-item text-white hover:text-green-400 cursor-pointer">Serviços</a>
+                    <a href="#pricing" class="nav-item text-white hover:text-green-400 cursor-pointer">Preços</a>
+                    <a href="#areas" class="nav-item text-white hover:text-green-400 cursor-pointer">Áreas</a>
+                    <a href="#calculator" class="nav-item text-white hover:text-green-400 cursor-pointer">Calculadora</a>
+                    <a href="#contact" class="nav-item text-white hover:text-green-400 cursor-pointer">Contato</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#home" class="block text-white hover:text-green-400 py-2">Início</a>
+                <a href="#about" class="block text-white hover:text-green-400 py-2">Sobre</a>
+                <a href="#services" class="block text-white hover:text-green-400 py-2">Serviços</a>
+                <a href="#pricing" class="block text-white hover:text-green-400 py-2">Preços</a>
+                <a href="#areas" class="block text-white hover:text-green-400 py-2">Áreas</a>
+                <a href="#calculator" class="block text-white hover:text-green-400 py-2">Calculadora</a>
+                <a href="#contact" class="block text-white hover:text-green-400 py-2">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Working Hours Alert -->
+    <div id="working-hours-alert" class="hidden fixed top-20 left-1/2 transform -translate-x-1/2 z-40 working-hours-alert text-white px-6 py-3 rounded-lg shadow-lg">
+        <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="font-medium">Atendimento apenas das 8h às 13h</span>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="animate-fade-in">
+                <div class="motorcycle-icon text-8xl mb-8">🏍️</div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+                    Entregas <span class="text-green-400">Rápidas</span> e <span class="text-blue-400">Seguras</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 animate-slide-up">
+                    Conectamos você ao seu destino com agilidade e confiança
+                </p>
+                <button onclick="checkWorkingHours('request')" class="btn-green text-white px-8 py-4 rounded-full text-lg font-semibold animate-float">
+                    🚀 Solicitar Entrega Agora
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900 bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Sobre Nós</h2>
+                <div class="w-24 h-1 bg-green-400 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <h3 class="text-3xl font-bold mb-6 text-green-400">Sua Confiança, Nossa Missão</h3>
+                    <p class="text-lg text-gray-300 mb-6">
+                        A MotoExpress nasceu com o propósito de revolucionar o serviço de entregas na região. 
+                        Com anos de experiência no mercado, oferecemos soluções rápidas e seguras para suas necessidades de transporte.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                            <span>Entregas em até 30 minutos</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                            <span>Rastreamento em tempo real</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                            <span>Motoboys experientes e confiáveis</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center animate-float">
+                    <div class="text-9xl">📦</div>
+                    <p class="text-2xl font-semibold text-blue-400 mt-4">Cuidado em cada entrega</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Nossos Serviços</h2>
+                <div class="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700">
+                    <div class="text-6xl mb-6 text-center">📄</div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">Documentos</h3>
+                    <p class="text-gray-300 mb-6">Entrega rápida e segura de documentos importantes, contratos e papéis oficiais.</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>• Até 500g</li>
+                        <li>• Envelope lacrado</li>
+                        <li>• Comprovante de entrega</li>
+                    </ul>
+                </div>
+                <div class="card-hover bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700">
+                    <div class="text-6xl mb-6 text-center">🛍️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">Encomendas</h3>
+                    <p class="text-gray-300 mb-6">Transporte de produtos, compras online e encomendas diversas com total segurança.</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>• Até 5kg</li>
+                        <li>• Embalagem protegida</li>
+                        <li>• Seguro incluso</li>
+                    </ul>
+                </div>
+                <div class="card-hover bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700">
+                    <div class="text-6xl mb-6 text-center">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">Expressa</h3>
+                    <p class="text-gray-300 mb-6">Serviço premium para entregas urgentes com prioridade máxima e tempo reduzido.</p>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>• Até 15 minutos</li>
+                        <li>• Prioridade total</li>
+                        <li>• Acompanhamento VIP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-900 bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Tabela de Preços</h2>
+                <div class="w-24 h-1 bg-green-400 mx-auto mb-8"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-800 bg-opacity-50 rounded-2xl overflow-hidden border border-gray-700">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-700">
+                                <tr>
+                                    <th class="px-6 py-4 text-left font-semibold">Tipo de Entrega</th>
+                                    <th class="px-6 py-4 text-center font-semibold">Peso Máximo</th>
+                                    <th class="px-6 py-4 text-center font-semibold">Tempo Estimado</th>
+                                    <th class="px-6 py-4 text-center font-semibold">Preço</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="hover:bg-gray-700 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="text-2xl">📄</span>
+                                            <span class="font-medium">Documentos</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">Até 500g</td>
+                                    <td class="px-6 py-4 text-center">15-25 min</td>
+                                    <td class="px-6 py-4 text-center font-bold text-green-400">R$ 8,00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="text-2xl">📦</span>
+                                            <span class="font-medium">Pequena</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">Até 2kg</td>
+                                    <td class="px-6 py-4 text-center">20-30 min</td>
+                                    <td class="px-6 py-4 text-center font-bold text-blue-400">R$ 12,00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="text-2xl">📋</span>
+                                            <span class="font-medium">Média</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">Até 5kg</td>
+                                    <td class="px-6 py-4 text-center">25-35 min</td>
+                                    <td class="px-6 py-4 text-center font-bold text-green-400">R$ 18,00</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <span class="text-2xl">⚡</span>
+                                            <span class="font-medium">Expressa</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">Até 3kg</td>
+                                    <td class="px-6 py-4 text-center">10-15 min</td>
+                                    <td class="px-6 py-4 text-center font-bold text-yellow-400">R$ 25,00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Section -->
+    <section id="areas" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Áreas de Atendimento</h2>
+                <div class="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card-hover bg-gradient-to-br from-green-600 to-green-800 p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-6">🏙️</div>
+                    <h3 class="text-3xl font-bold mb-4">Cedral</h3>
+                    <p class="text-lg opacity-90 mb-6">Atendemos toda a cidade de Cedral com entregas rápidas e seguras.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center justify-center space-x-2">
+                            <span>📍</span>
+                            <span>Centro e todos os bairros</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2">
+                            <span>⏰</span>
+                            <span>Tempo médio: 15-25 min</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hover bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl text-center">
+                    <div class="text-6xl mb-6">🌆</div>
+                    <h3 class="text-3xl font-bold mb-4">São José do Rio Preto</h3>
+                    <p class="text-lg opacity-90 mb-6">Cobertura completa na região central e principais bairros da cidade.</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center justify-center space-x-2">
+                            <span>📍</span>
+                            <span>Centro e região metropolitana</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2">
+                            <span>⏰</span>
+                            <span>Tempo médio: 20-35 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-20 bg-gray-900 bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Calculadora de Tempo</h2>
+                <div class="w-24 h-1 bg-green-400 mx-auto mb-8"></div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700">
+                    <form id="calculator-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Local de Retirada</label>
+                                <select id="pickup-location" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-green-400 focus:border-transparent">
+                                    <option value="">Selecione...</option>
+                                    <option value="cedral">Cedral</option>
+                                    <option value="sjrp">São José do Rio Preto</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Local de Entrega</label>
+                                <select id="delivery-location" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+                                    <option value="">Selecione...</option>
+                                    <option value="cedral">Cedral</option>
+                                    <option value="sjrp">São José do Rio Preto</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Tipo de Entrega</label>
+                            <select id="delivery-type" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-green-400 focus:border-transparent">
+                                <option value="">Selecione...</option>
+                                <option value="document">Documentos (até 500g)</option>
+                                <option value="small">Pequena (até 2kg)</option>
+                                <option value="medium">Média (até 5kg)</option>
+                                <option value="express">Expressa (até 3kg)</option>
+                            </select>
+                        </div>
+                        <button type="button" onclick="calculateDeliveryTime()" class="btn-blue w-full text-white py-4 rounded-lg text-lg font-semibold">
+                            🧮 Calcular Tempo de Entrega
+                        </button>
+                    </form>
+                    <div id="calculation-result" class="hidden mt-8 p-6 bg-green-600 bg-opacity-20 border border-green-400 rounded-lg">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">⏱️</div>
+                            <h3 class="text-2xl font-bold mb-2">Tempo Estimado</h3>
+                            <p id="estimated-time" class="text-3xl font-bold text-green-400 mb-4"></p>
+                            <p id="estimated-price" class="text-xl text-blue-400"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Entre em Contato</h2>
+                <div class="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
+            </div>
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-2xl border border-gray-700">
+                    <div class="text-6xl mb-6 animate-float">📱</div>
+                    <h3 class="text-3xl font-bold mb-6">Solicite sua entrega agora!</h3>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Clique no botão abaixo para ser direcionado ao WhatsApp e fazer seu pedido de forma rápida e prática.
+                    </p>
+                    <button onclick="checkWorkingHours('contact')" class="btn-green text-white px-8 py-4 rounded-full text-lg font-semibold animate-pulse-slow">
+                        💬 Chamar no WhatsApp
+                    </button>
+                    <div class="mt-8 space-y-4 text-sm text-gray-400">
+                        <div class="flex items-center justify-center space-x-2">
+                            <span>📞</span>
+                            <span>(17) 99634-4371</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2">
+                            <span>⏰</span>
+                            <span>Atendimento: 8h às 13h</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2">
+                            <span>📍</span>
+                            <span>Cedral e São José do Rio Preto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="text-2xl font-bold text-green-400 mb-4 animate-pulse-slow">
+                🏍️ MotoExpress
+            </div>
+            <p class="text-gray-400 mb-4">Entregas rápidas e seguras em Cedral e São José do Rio Preto</p>
+            <p class="text-sm text-gray-500">© 2024 MotoExpress. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Check working hours function
+        function checkWorkingHours(action) {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const isWorkingHours = currentHour >= 8 && currentHour < 13;
+
+            if (!isWorkingHours) {
+                showWorkingHoursAlert();
+                return;
+            }
+
+            if (action === 'request') {
+                openDeliveryForm();
+            } else if (action === 'contact') {
+                openWhatsApp();
+            }
+        }
+
+        // Show working hours alert
+        function showWorkingHoursAlert() {
+            const alert = document.getElementById('working-hours-alert');
+            alert.classList.remove('hidden');
+            setTimeout(() => {
+                alert.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Open delivery form (simplified WhatsApp message)
+        function openDeliveryForm() {
+            const message = "Olá! Gostaria de solicitar uma entrega. Podem me ajudar com os detalhes?";
+            const whatsappUrl = `https://wa.me/5517996344371?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Open WhatsApp contact
+        function openWhatsApp() {
+            const message = "Olá! Gostaria de mais informações sobre os serviços de entrega.";
+            const whatsappUrl = `https://wa.me/5517996344371?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Calculate delivery time
+        function calculateDeliveryTime() {
+            const pickup = document.getElementById('pickup-location').value;
+            const delivery = document.getElementById('delivery-location').value;
+            const type = document.getElementById('delivery-type').value;
+
+            if (!pickup || !delivery || !type) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            let baseTime = 0;
+            let price = 0;
+
+            // Calculate base time based on locations
+            if (pickup === delivery) {
+                baseTime = pickup === 'cedral' ? 15 : 20; // Same city
+            } else {
+                baseTime = 35; // Between cities
+            }
+
+            // Adjust time and price based on delivery type
+            switch (type) {
+                case 'document':
+                    baseTime += 5;
+                    price = 8;
+                    break;
+                case 'small':
+                    baseTime += 8;
+                    price = 12;
+                    break;
+                case 'medium':
+                    baseTime += 12;
+                    price = 18;
+                    break;
+                case 'express':
+                    baseTime -= 10;
+                    price = 25;
+                    break;
+            }
+
+            const maxTime = baseTime + 10;
+            
+            document.getElementById('estimated-time').textContent = `${baseTime}-${maxTime} minutos`;
+            document.getElementById('estimated-price').textContent = `Preço: R$ ${price},00`;
+            document.getElementById('calculation-result').classList.remove('hidden');
+
+            // Scroll to result
+            document.getElementById('calculation-result').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        // Add scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize scroll animations
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '1';
+        });
+
+        // Check working hours on page load
+        window.addEventListener('load', function() {
+            const now = new Date();
+            const currentHour = now.getHours();
+            const isWorkingHours = currentHour >= 8 && currentHour < 13;
+
+            if (!isWorkingHours) {
+                setTimeout(showWorkingHoursAlert, 2000);
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974e24b243568b1d',t:'MTc1NjE1NjkzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
